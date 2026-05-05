@@ -29,6 +29,10 @@ export function intersection(
   return boolean(subject, clipping, INTERSECTION);
 }
 
+function hello(){
+    return "hello, chris";
+}
+
 /**
  * @enum {Number}
  */

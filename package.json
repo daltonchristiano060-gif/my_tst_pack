@@ -1,11 +1,27 @@
 {
-  "name": "martinez-polygon-clipping",
+  "name": "my_tst_pack",
   "version": "0.8.1",
   "description": "Martinez polygon clipping algorithm, does boolean operation on polygons (multipolygons, polygons with holes etc): intersection, union, difference, xor",
-  "main": "dist/martinez.cjs",
-  "browser": "dist/martinez.js",
-  "module": "dist/martinez.js",
-  "types": "dist/index.d.ts",
+  "keywords": [
+    "polygon",
+    "clipping",
+    "boolean",
+    "intersection",
+    "union",
+    "xor",
+    "geometry",
+    "martinez"
+  ],
+  "homepage": "https://github.com/w8r/martinez",
+  "bugs": {
+    "url": "https://github.com/w8r/martinez/issues"
+  },
+  "repository": {
+    "url": "git+https://github.com/w8r/martinez.git",
+    "type": "git"
+  },
+  "license": "MIT",
+  "author": "Alex Milevski <info@w8r.name>",
   "type": "module",
   "exports": {
     ".": {
@@ -13,6 +29,12 @@
       "require": "./dist/martinez.cjs",
       "types": "./dist/index.d.ts"
     }
+  },
+  "main": "dist/martinez.cjs",
+  "browser": "dist/martinez.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "test": "test"
   },
   "files": [
     "dist/"
@@ -33,23 +55,11 @@
     "deploy:demo": "npm run build:demo && gh-pages --nojekyll -d dist/demo -t -m 'Deploy demo'",
     "prepublishOnly": "npm run lint && npm run test:run && npm run build"
   },
-  "keywords": [
-    "polygon",
-    "clipping",
-    "boolean",
-    "intersection",
-    "union",
-    "xor",
-    "geometry",
-    "martinez"
-  ],
-  "repository": {
-    "url": "git+https://github.com/w8r/martinez.git",
-    "type": "git"
+  "dependencies": {
+    "robust-predicates": "^2.0.4",
+    "splaytree": "^0.1.4",
+    "tinyqueue": "3.0.0"
   },
-  "homepage": "https://github.com/w8r/martinez",
-  "author": "Alex Milevski <info@w8r.name>",
-  "license": "MIT",
   "devDependencies": {
     "@turf/union": "^4.6.0",
     "@types/geojson": "^1.0.2",
@@ -71,15 +81,5 @@
     "vite-plugin-dts": "^3.0.0",
     "vitest": "^1.0.0"
   },
-  "dependencies": {
-    "robust-predicates": "^2.0.4",
-    "splaytree": "^0.1.4",
-    "tinyqueue": "3.0.0"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "bugs": {
-    "url": "https://github.com/w8r/martinez/issues"
-  }
+  "module": "dist/martinez.js"
 }
